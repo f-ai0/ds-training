@@ -1,3 +1,0 @@
-=== Training Log ===
-Day 1: Environment setup complete
-Day 2: Python review complete
