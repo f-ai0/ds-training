@@ -1,3 +1,0 @@
-column,issue,action,reason
-in_time,35 missing values (9.7%),Filled with mode ('06:19'),Mode used for categorical data
-out_time,35 missing values (9.7%),Filled with mode ('16:38'),Mode used for categorical data
