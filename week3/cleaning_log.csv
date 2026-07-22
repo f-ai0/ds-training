@@ -1,0 +1,16 @@
+column,issue,action,reason
+in_time,35 missing values (9.72%),Filled with mode ('06:19'),"Categorical/time field, mode = most common shift start"
+out_time,35 missing values (9.72%),Filled with mode ('16:38'),"Categorical/time field, mode = most common shift end"
+hours_worked,35 missing values (9.72%),Filled with median (9.1),"Numeric, median is robust to outliers"
+monthly_salary,13 missing values (3.61%),Filled with median (8125.0),"Numeric, median avoids skew from high earners"
+satisfaction_score,12 missing values (3.33%),Filled with median (4.0),"Numeric ordinal score, median is a safe default"
+department,6 missing values (1.67%),Filled with mode ('Operations'),"Categorical, mode = most frequent department"
+status,Binary categorical (PRESENT/ABSENT),"Label Encoding (ABSENT=0, PRESENT=1)","Binary (2 values): Label Encoding is safe here, no fake order created"
+position,"Nominal, 8 categories","One-Hot Encoding (pd.get_dummies, drop_first=True)","Nominal, few categories: One-Hot avoids implying false order"
+department,"Nominal, 4 categories",One-Hot Encoding (pd.get_dummies),"Nominal, few categories: One-Hot avoids implying false order"
+position,Demonstrated alternative for high-cardinality case,Frequency Encoding (position_freq) / Target Encoding (position_target),"Nominal, many categories: Frequency/Target scale better than One-Hot; Target Encoding only used with CV/train-only to avoid leakage"
+"badge_number, name, in_time, out_time, work_date",Identifiers / near-continuous timestamps (30-191 unique values),Excluded from encoding entirely,Not real categorical features -- encoding would explode dimensionality (400+ columns) with no predictive value
+punch_count,1 outlier (IQR),"Capped to [-1.00, 7.00]",IQR capping preserves the row while limiting extreme influence
+hours_worked,1 outlier (IQR),"Capped to [5.95, 11.95]",Likely a data entry error (16.5 hrs); capping is safer than deletion
+monthly_salary,8 outliers (IQR),"Capped to [3069.75, 13839.75]",Right-skewed salary distribution; high earners are real but extreme
+satisfaction_score,19 outliers (IQR),"Capped to [1.50, 5.50]","Bounded scale (1-5); IQR flags legitimate low/high scores, capping keeps them in range"
