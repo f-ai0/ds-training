@@ -24,12 +24,21 @@ DATA:
   and the baseline.
 
 SUCCESS CRITERIA:
-  - Model beats the majority-class baseline by a clear margin (baseline
-    "always predict PRESENT" already scores ~90% accuracy because of the
-    imbalance, so accuracy alone is not enough - track recall/F1/ROC-AUC
-    on the ABSENT class too).
+  - Model beats the majority-class baseline by a clear margin on the
+    metrics that matter for imbalance (recall/F1/ROC-AUC on the ABSENT
+    class - accuracy alone is misleading since "always predict PRESENT"
+    already scores ~90%).
   - App runs from one command and returns a prediction in under 2 seconds.
   - A supervisor can use it without reading any code.
+
+HONEST NOTE (Day 2 result):
+  Using only historical/lag features (no same-day leakage), the tuned
+  Logistic Regression reaches Test AUC ~0.55 and absent-class F1 ~0.21 -
+  a small, real improvement over guessing, not a strong model. With 360
+  rows / 30 employees / 16 days there simply isn't much history per
+  employee to learn from yet. This is reported honestly rather than
+  hidden - flag it to your supervisor and in the README's Limitations
+  section (Task 5.1) as a data-volume limitation, not a bug.
 
 OUT OF SCOPE:
   - Real-time integration with the badge system.
