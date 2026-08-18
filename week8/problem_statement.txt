@@ -1,0 +1,44 @@
+"""
+PROJECT PROBLEM STATEMENT
+===========================
+
+PROBLEM:
+  Supervisors cannot easily tell which employees are at risk of absence,
+  and attendance data sits in a raw punch-record spreadsheet nobody analyzes.
+
+GOAL:
+  Predict whether an employee will be absent (is_absent) on a given work day
+  from their attendance pattern (punch behavior, position, historical timing),
+  and give supervisors a dashboard to explore attendance trends and run
+  predictions on demand.
+
+WHO USES IT:
+  Site supervisors and HR staff - non-technical users.
+
+DATA:
+  Practice_Dataset.xlsx - 360 daily attendance records for 30 employees
+  (badge_number, name, position, work_date, in_time, out_time, punch_count,
+  status). status = PRESENT/ABSENT is the raw label; is_absent is derived
+  from it (1 = ABSENT, 0 = PRESENT). About 9.7% of records are ABSENT, so
+  the target is imbalanced - this must be considered when choosing metrics
+  and the baseline.
+
+SUCCESS CRITERIA:
+  - Model beats the majority-class baseline by a clear margin (baseline
+    "always predict PRESENT" already scores ~90% accuracy because of the
+    imbalance, so accuracy alone is not enough - track recall/F1/ROC-AUC
+    on the ABSENT class too).
+  - App runs from one command and returns a prediction in under 2 seconds.
+  - A supervisor can use it without reading any code.
+
+OUT OF SCOPE:
+  - Real-time integration with the badge system.
+  - Predicting exact absence dates in advance (this predicts risk given a
+    day's attendance pattern, not future dates).
+
+NOTE ON CONFIRMATION:
+  Per Task 1.1, this problem choice still needs to be confirmed with your
+  supervisor before you continue past Day 1 - the dataset shape (attendance
+  punches, no separate department/salary columns) differs a bit from the
+  generic example in the task sheet, so flag that when you confirm.
+"""
