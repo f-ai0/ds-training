@@ -1,0 +1,31 @@
+
+PyTorch vs TensorFlow - Week 7 Comparison
+==========================================
+
+1) Tabular MLP (is_absent classification)
+   TensorFlow (Week 6): Accuracy=1.000, F1=1.000, AUC=1.000
+   PyTorch    (Week 7): Accuracy=0.903, F1=0.000, AUC=1.000
+   -> Both models learned to separate the classes equally well (AUC=1.0),
+      but PyTorch's F1 collapsed to 0 at the default 0.5 threshold because
+      the test set was imbalanced (7/72 positive). This is a threshold
+      issue, not a learning-capacity issue - fixable with a lower
+      threshold or class weighting (see Day 2 notes).
+
+2) CNN on Fashion-MNIST
+   TensorFlow (Week 6): Test accuracy = 0.8965 (10 epochs)
+   PyTorch    (Week 7): Test accuracy = 0.8960 (5 epochs)
+   -> Nearly identical final accuracy. PyTorch reached it in half the
+      epochs, likely due to similar architecture choices but possibly
+      a slightly more effective optimizer/learning-rate combination.
+
+3) Transfer Learning (ResNet18 on CIFAR-10 subset)
+   No direct Week 6 equivalent - this was new in Week 7.
+   Demonstrates that fine-tuning a pretrained model on ~5,000 images
+   reaches strong accuracy in just 3 epochs, versus the much larger
+   data and longer training needed for the from-scratch CNN above.
+
+Overall takeaway:
+Both frameworks reach comparable model quality on the same tasks - the
+real differences were in code style (PyTorch's explicit training loop
+vs TensorFlow's .fit()) and in details like decision thresholds, which
+matter more than the framework choice itself on imbalanced data.
