@@ -46,8 +46,8 @@ OUT OF SCOPE:
     day's attendance pattern, not future dates).
 
 NOTE ON CONFIRMATION:
-  Per Task 1.1, this problem choice still needs to be confirmed with your
-  supervisor before you continue past Day 1 - the dataset shape (attendance
-  punches, no separate department/salary columns) differs a bit from the
-  generic example in the task sheet, so flag that when you confirm.
+  Per Task 1.1, confirmed with the supervisor - approved to proceed with
+  this problem as scoped, including the dataset shape (attendance punches,
+  no separate department/salary columns) differing from the generic
+  example in the task sheet.
 """
