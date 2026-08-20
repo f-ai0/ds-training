@@ -64,6 +64,4 @@ week8_project/
 
 ## Author
 
-[Your name] — Data Science Co-Op
-
-*(Fill in your name/company before submitting — left blank since I don't have that info.)*
+Fajer Alshammri — Ai Co-Op
