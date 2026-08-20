@@ -32,27 +32,24 @@ Logistic Regression was chosen because it clearly beat Random Forest on cross-va
 
 ## Project Structure
 
-```
 week8_project/
-  data/
-      Practice_Dataset.xlsx        # raw input
-      clean_dataset.csv            # produced by pipeline.py
-  models/
-      final_model.pkl              # full pipeline: preprocessing + model
-  src/
-      pipeline.py                  # EDA + cleaning + feature engineering
-      train.py                     # baseline, model comparison, tuning
-  tests/
-      test_edge_cases.py           # automated Streamlit edge-case tests
-  app.py                           # Streamlit prediction app + dashboard
-  presentation.pptx                # slides for the Day 5 presentation
-  build_slides.js                  # regenerates presentation.pptx (pptxgenjs)
-  requirements.txt
-  problem_statement.txt
-  model_comparison.csv
-  .gitignore
-  README.md
-```
+data/
+Practice_Dataset.xlsx # raw input
+clean_dataset.csv # produced by pipeline.py
+models/
+final_model.pkl # full pipeline: preprocessing + model
+src/
+pipeline.py # EDA + cleaning + feature engineering
+train.py # baseline, model comparison, tuning
+tests/
+test_edge_cases.py # automated Streamlit edge-case tests
+app.py # Streamlit prediction app + dashboard
+requirements.txt
+problem_statement.txt
+model_comparison.csv
+.gitignore
+README.md
+
 
 ## Limitations
 
